@@ -1,0 +1,6 @@
+<apex:page sidebar="false" showHeader="false">
+    <iframe  scrolling="true" id="iframe_id" width="20%" height="100%"/>
+    
+    
+    
+</apex:page>

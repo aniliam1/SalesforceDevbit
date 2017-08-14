@@ -1,0 +1,32 @@
+<aura:component controller="acUnifiedData" implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute Name="accountId" type="Id" />
+    //  <aura:attribute Name="AccountSchemaDef" type="AccountschemaDef.Accountschema[]" /> 
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    
+    <label class="slds-text-heading_small">Accounts</label>
+    <div class="slds-box">
+        <table   class="slds-table slds-table--bordered slds-table--striped">
+            <thead>
+                <tr class="slds-text-heading--label">
+                    <th scope="col" title="SelctButton" width="25%">
+                        <span class="slds-truncate" title="Name">{!v.AccountSchemaDef.accountId}</span>
+                    </th>
+                    <th class="slds-is-sortable slds-text-title--caps" scope="col" width="25%">
+                        <span class="slds-truncate" title="Name">{!v.AccountSchemaDef.accountName}</span>     
+                    </th>
+                    <th class="slds-is-sortable slds-text-title--caps" scope="col" width="25%">
+                        <span class="slds-truncate" title="Name">{!v.AccountSchemaDef.department}</span>  
+                    </th>
+                    <th class="slds-is-sortable slds-text-title--caps" scope="col" >
+                        <span class="slds-truncate" title="Name">{!v.AccountSchemaDef.accType}</span>  
+                    </th>
+                </tr>
+            </thead>
+            </table>
+       
+    </div>
+    
+	
+</aura:component>

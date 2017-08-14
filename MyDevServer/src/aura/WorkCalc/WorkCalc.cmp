@@ -1,0 +1,57 @@
+<aura:component controller="vCalculatorConc" implements="flexipage:availableForAllPageTypes" access="global"  >   
+    <aura:attribute name="InValue" type="String"/>
+    <aura:attribute name="GlovalA" type="Integer" default='0' />
+     <aura:attribute name="LastOps" type="String" default=""/>
+        <aura:attribute name="chk" type="String"/>
+    
+<div class="demo-only slds-grid" style="height:250px;max-width:170px;background:#f4f6f9;padding:1rem;">
+  <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+<div class="slds-form-element">
+        
+
+    <div class="slds-form-element__control">
+  
+ 
+ <ui:inputtext aura:id="amount"  class="slds-input slds-input_bare" label="Amount" value="{!v.InValue}" />
+    </div>
+</div>
+
+ <p></p>
+   <div class="slds-button-group" role="group">
+		<ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="1"/>
+       <ui:button class="slds-button slds-button_brand"  press="{!c.handleClick}" label="2" />
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="3" />
+       
+</div>
+    <p></p>
+   <div class="slds-button-group" role="group">
+		<ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="4"/>
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="5" />
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="6" />       
+</div>
+    <p></p>
+   <div class="slds-button-group" role="group">
+		<ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="7"/>
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="8" />
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="9" />
+       
+</div>
+      <p></p>
+     <div class="slds-button-group" role="group">
+             <ui:button class="slds-button slds-button_brand" press="{!c.handleOps}" label="+"/>
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="-- " />
+         <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label=" /" />
+       
+</div>
+           <p></p>
+     <div class="slds-button-group" role="group">
+         <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="="/>
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="C" />
+       <ui:button class="slds-button slds-button_brand" press="{!c.handleClick}" label="B" />
+       
+</div>
+
+
+    </div>
+    </div>
+</aura:component>

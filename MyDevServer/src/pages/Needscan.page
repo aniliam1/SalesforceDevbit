@@ -1,0 +1,13 @@
+<apex:page standardController="Needs__c">
+<apex:pageBlock >
+<Apex:pageBlock title="Needs">
+
+
+
+Name : {!Needs__c.Name}
+
+</apex:pageBlock>
+</apex:pageBlock>
+
+
+</apex:page>

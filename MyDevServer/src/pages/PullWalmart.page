@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:pageBlock title="Pull Walmart">
+   
+        
+    </apex:pageBlock>
+    <apex:detail /> 
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page standardcontroller="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock title="{!Account.name}">
+  
+  
+  Account : {!Account.name} <p></p>
+  
+    
+  Account ID: {!Account.id}
+  
+  
+  <p></p>
+  
+    </apex:pageBlock>
+  
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

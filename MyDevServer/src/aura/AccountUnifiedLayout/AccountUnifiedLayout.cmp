@@ -1,0 +1,20 @@
+<aura:component controller="acUnifiedData" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="accountid" type="id"  />
+    <aura:attribute name="companyName" type="String" />
+    <aura:attribute name="contactDetail" type="object" /> 
+    <aura:attribute name="activityDetail" type="object"/>
+    <aura:attribute name="pageSize" type="Integer" default="5"/>
+    <aura:attribute name="rec" type="String" />
+     <aura:attribute name="recordId" type="String" />
+    
+     <lightning:tabset variant="scoped">
+        <lightning:tab onactive="{! c.handleActive }" label="Account Info" id="accountInfo" />
+        <lightning:tab onactive="{! c.handleActive }" label="Contacts" id="contactList" />
+        <lightning:tab onactive="{! c.handleActive }" label="Events" id="eventlist" />
+        <lightning:tab onactive="{! c.handleActive }" label="Location" id="locationMap" />
+      
+	</lightning:tabset>
+    
+    
+</aura:component>

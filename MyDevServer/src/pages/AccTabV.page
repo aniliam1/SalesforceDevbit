@@ -1,0 +1,22 @@
+<apex:page controller="AccTab" >
+	<form>
+	<apex:pageblock title="List of Accounts">
+	
+	
+			<apex:pageblocktable value="{!acc}" var="ac">
+				<apex:column value="{!ac.Name}" />
+				<apex:column value="{!ac.Type}" />
+				<apex:column value="{!ac.Industry}"/>
+				<apex:column value="{!ac.Phone}"/>
+			</apex:pageblocktable>
+		
+			<apex:pageblocktable value="{!acc}" var="ac">
+				<apex:column value="{!ac.Name}" />
+				<apex:column value="{!ac.Type}" />
+				<apex:column value="{!ac.Industry}"/>
+				<apex:column value="{!ac.Phone}"/>
+			</apex:pageblocktable>
+		
+	</apex:pageblock>
+	</form>
+</apex:page>

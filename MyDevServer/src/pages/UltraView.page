@@ -1,0 +1,85 @@
+<apex:page controller="CustomWorkbench" docType="html-5.0" >
+    <apex:pageBlock title="ULTRA VIEW">
+        <apex:form >
+            <apex:pageBlock >
+                <apex:outputLabel value="Choose Object : "></apex:outputLabel>
+                <apex:selectList value="{!AllObjectsList}" size="1"
+                    onchange="change()">
+                    <apex:selectOptions value="{!AllObjects}">
+                    </apex:selectOptions>
+                </apex:selectList>
+
+                <apex:actionFunction name="change" action="{!getAllFields}"
+                    reRender="fields1" status="Loading" />
+                <br />
+                <apex:actionStatus id="Loading" startText="Loading..."></apex:actionStatus>
+
+            </apex:pageBlock>
+            <apex:pageBlock id="fields1">
+                <div>
+                    <table>
+                        <tr>
+                            <td  ><b><apex:OutputText value="Select {!AllObjectsList} Fields : "></apex:OutputText></b>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid Grey" width ="170" ><apex:selectList value="{!CorrespondingFields}"  size="5"
+                                    multiselect="true">
+                                    <apex:selectOptions value="{!fieldNames}" >
+                                    </apex:selectOptions>
+                                </apex:selectList><br />
+                            <br /></td>
+                
+                            <td >
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <apex:outputLabel value="Create and edit query below : "></apex:outputLabel>
+<p></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:commandButton value="Generate Query"
+                                    action="{!DisplayRecords}" status="Loading"
+                                    reRender="querytextarea,showrecords" /><br />
+<p></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <apex:commandButton value="Execute Query"
+                                    action="{!RunQuery}" status="Loading"
+                                    reRender="showrecords" /><br /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <apex:inputTextarea disabled="false" value="{!query1}" rows="4"
+                    cols="100" id="querytextarea" />
+                    
+                <div>
+                    <table>
+                        <tr>
+                <td>
+                <apex:commandButton value="Export to Excel"
+                                    action="{!exportToExcel}"  status="Generating Excel..."
+                                     /><br />   
+                    </td>
+                    </tr>
+                    </table>
+                    </div>
+                    
+            </apex:pageBlock>
+            <apex:pageBlock id="showrecords" rendered="true">
+
+                <apex:pageBlockTable value="{!recordlist}" var="fields">
+                    <apex:repeat value="{!SelfieldNameToString}" var="dynamicfields">
+
+                        <apex:column value="{!fields[dynamicfields]}" />
+                    </apex:repeat>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+
+
+    </apex:pageBlock>
+    <apex:detail />
+    
+     <apex:repeat value="{!lstwrapper}" var="x">
+       {!x.id},{!x.name}
+  </apex:repeat>
+</apex:page>
